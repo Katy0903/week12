@@ -62,9 +62,17 @@ function bgChange(event){
     // console.log("buttons clicked", event.target);
     console.log("buttons clicked", event.target.tagName);
     if (event.target.tagName === "BUTTON") {
-        event.target.classList.add("greenBG");
+        if (event.target.textContent === "yellow") {
+        event.target.classList.add("yellow");
+        } if (event.target.textContent === "blue") {
+            event.target.classList.add("blue");
+            }if (event.target.textContent === "red") {
+                event.target.classList.add("red");
+                }if (event.target.textContent === "white") {
+                    event.target.classList.add("white");
+            };           
     };
 };
 
-buttonContainer.addEventListener("mouseover", bgChange);
-// ("mouseover", (event))
+buttonContainer.addEventListener("click", bgChange);
+// buttonContainer.addEventListener("mouseover", bgChange);
