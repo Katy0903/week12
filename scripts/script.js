@@ -1,6 +1,7 @@
 
 // button
 const buttonRef = document.querySelector("button");
+// console.log(buttonRef);
 
 function alertUser()
 {
@@ -27,9 +28,23 @@ function changeText()
 {
     if (buttonRef.textContent === "Click Me!") {
         buttonRef.textContent = "Clicked!" 
+        // one equal sogn just assigning, === is for equal check
     }else {
         buttonRef.textContent = "Click Me!";
     };
 };
 
 buttonRef.addEventListener("click", changeText);
+
+
+function updateImage() {
+    const image = document.querySelector("#shoppingCart");
+    image.setAttribute("src", "images/shoppingCart.png");
+    // think we are in html, no need ..
+    image.setAttribute("alt","shopping cart");
+    image.setAttribute("width",50);
+    image.setAttribute("height",50);
+
+};
+
+buttonRef.addEventListener("click", updateImage);
