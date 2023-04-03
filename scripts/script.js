@@ -53,14 +53,14 @@
 
 
 
-// new
+// // new
 const buttonContainer = document.querySelector(".button-container")
 // console.log(buttonContainer);
 
 // event parameter auto receives event object
 function bgChange(event){
     // console.log("buttons clicked", event.target);
-    console.log("buttons clicked", event.target.tagName);
+    console.log("buttons mouseover", event.target.tagName);
     if (event.target.tagName === "BUTTON") {
         if (event.target.textContent === "yellow") {
         event.target.classList.add("yellow");
@@ -74,6 +74,49 @@ function bgChange(event){
     };
 };
 
-buttonContainer.addEventListener("click", bgChange);
-// buttonContainer.addEventListener("mouseover", bgChange);
+// buttonContainer.addEventListener("click", bgChange);
+buttonContainer.addEventListener("mouseover", bgChange);
+
+const buttonContainer1 = document.querySelector(".button-container")
+
+function changeText(event){
+    let myColor =event.target.textContent;
+    
+    event.target.style.color = myColor;
+    
+};
+
+buttonContainer1.addEventListener("click", changeText);
+
+
+
+
+
+const buttonRef = document.querySelector("button");
+
+function addNewButtonAndPara() {
+
+    // 2 x createElement()
+    let newButton = document.createElement("button");
+
+    // make this button to mouseover by changing it's bg to green
+
+    newButton.addEventListener("mouseover", changeText);
+
+
+    let newPara = document.createElement("p");
+
+    // 2 x parent(document.body).appendChild()
+    document.body.appendChild(newButton);
+    document.body.appendChild(newPara);
+
+    // 2 x .innerText or .textContent
+    newButton.innerText = "purple";
+    newPara.innerText = "hello!";
+    // newButton.textContent = "purple";
+    // newPara.textContent = "hello!";
+
+};
+
+buttonRef.addEventListener("click", addNewButtonAndPara);
 
